@@ -346,7 +346,8 @@ const drive_settings builtin_knowndrives[] = {
     "Micron 5100 Pro / 5200 SSDs",
     "(Micron_5100_)?(EE|MT)FDDA[KV](240|480|960|1T9|3T8|7T6)T(BY|CB|CC)|" // Matches both stock and Dell OEM
       // tested with Micron_5100_MTFDDAK3T8TCB/D0MU410, MTFDDAK3T8TCB/D0MU410
-    "(Micron_5200_)?MTFDDAK(480|960|1T9|3T8|7T6)TD(C|D|N)", // tested with Micron_5200_MTFDDAK3T8TDD/D1MU505
+    "(Micron_5200_|Micron_5210_)?MTFDDAK(480|960|1T9|3T8|7T6)(Q|T)D(C|D|E|N)", // tested with Micron_5200_MTFDDAK3T8TDD/D1MU505
+      // tested with Micron_5210_MTFDDAK7T6QDE/D2MU800
     "", "",
   //"-v 1,raw48,Raw_Read_Error_Rate "
   //"-v 5,raw48,Reallocated_Block_Count "
@@ -371,6 +372,7 @@ const drive_settings builtin_knowndrives[] = {
     "-v 202,raw48,Percent_Lifetime_Remain " // Remaining endurance, trips at 10%
     "-v 206,raw48,Write_Error_Rate "
     "-v 210,raw48,RAIN_Success_Recovered "  // Total number of NAND pages recovered by RAIN
+    "-v 246,raw48,Total_Host_Sector_Write "
     "-v 247,raw48,Host_Program_Page_Count "
     "-v 248,raw48,Bckgnd_Program_Page_Cnt"
   },
